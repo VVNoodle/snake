@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(123, 119, 119) !important;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+}
+
+.blank {
+  background-color: rgb(0, 0, 0);
+}
+
+.snake {
+  background-color: rgb(255, 255, 255);
+}
+
+.wall {
+  background-color: green;
+}
+
+.fruit {
+  background-color: rgb(111, 98, 231);
+}
+
+.lose {
+  background-color: red;
+}
+
+.playing {
+  background-color: rgb(255, 255, 81);
+}
+
+.replay {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  font-size: 50px;
+}
+
+h2 {
+  color: white;
+}
+
+#overlay {
+  display: none;
+  top: 250px;
+  left: 220px;
+  color: rgb(222, 237, 89);
+  position: absolute;
+  z-index: 1;
+}
+
+#overlayPause {
+  display: none;
+  font-size: 150px;
+  top: 200px;
+  left: 260px;
+  color: rgb(222, 237, 89);
+  position: absolute;
+  z-index: 1;
+}
