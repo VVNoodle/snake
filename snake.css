@@ -52,7 +52,7 @@ h2 {
 
 #overlay {
   display: none;
-  top: 250px;
+  top: 430px;
   left: 220px;
   color: rgb(222, 237, 89);
   position: absolute;
@@ -62,7 +62,7 @@ h2 {
 #overlayPause {
   display: none;
   font-size: 150px;
-  top: 200px;
+  top: 340px;
   left: 260px;
   color: rgb(222, 237, 89);
   position: absolute;

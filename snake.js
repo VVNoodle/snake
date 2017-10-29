@@ -139,7 +139,7 @@ function gameLoop() {
   } else if (gameOver) {
     clearTimeout(int);
   }
-  // console.log(interval);
+  //recursive setTimeout so taht we can alter the interval aka speed of the snake while the game is 'running' 
   int = setTimeout(gameLoop, interval);
 }
 
