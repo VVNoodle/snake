@@ -11,6 +11,7 @@ TODO:
     Settings
     volume
     home
+    change speed
   Sound effects
     when fruit
     when hit wall
@@ -23,7 +24,7 @@ var snakeX = 2;
 var snakeY = 2;
 var height = 30;
 var width = 30;
-var interval = 100;
+var interval;
 var increment = 1;
 
 // game variables
@@ -36,13 +37,12 @@ var running = false;
 var gameOver;
 var direction = -1; // up = 0, down = -1, left = 1, right = 2
 var int;
-
 /**
  * entry point of game
  */
 function run() {
   init(); //initialize the webpage
-  int = setInterval(gameLoop, interval); //runs gameLoop every interval
+  gameLoop(); //runs gameLoop every interval
 }
 
 function init() {
@@ -133,11 +133,14 @@ window.addEventListener("keypress", function key(event) {
 });
 
 function gameLoop() {
+  interval = document.getElementById("test").value;
   if (running && !gameOver) {
     update();
   } else if (gameOver) {
-    clearInterval(int);
+    clearTimeout(int);
   }
+  // console.log(interval);
+  int = setTimeout(gameLoop, interval);
 }
 
 function update() {
