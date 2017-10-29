@@ -53,8 +53,8 @@ h2 {
 
 #overlay {
   display: none;
-  top: 430px;
-  left: 220px;
+  top: 300px;
+  left: 760px;
   color: rgb(222, 237, 89);
   position: absolute;
   z-index: 1;
@@ -63,8 +63,8 @@ h2 {
 #overlayPause {
   display: none;
   font-size: 150px;
-  top: 340px;
-  left: 260px;
+  top: 220px;
+  left: 800px;
   color: rgb(222, 237, 89);
   position: absolute;
   z-index: 1;

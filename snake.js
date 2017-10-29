@@ -97,9 +97,32 @@ function createFruit() {
   fY = fruitY;
 }
 
+function createObstacle() {
+  var found = false;
+  while (!found && length < (width - 2) * (height - 2) + 1) {
+    var obsX = rand(1, width - 1);
+    var obsY = rand(1, height - 1);
+    if (getType(obsX, obsY) == "blank") found = true;
+  }
+  set(obsX, obsY, "wall");
+}
+
+function clearObstacle() {
+  for (var i = 1; i < width - 1; i++) {
+    for (var j = 1; j < height - 1; j++) {
+      console.log("halalallals");
+      if (getType(i, j) == "wall") {
+        set(i, j, "blank");
+      }
+    }
+  }
+}
+
 window.addEventListener("keypress", function key(event) {
   // if key is W/w and curent direction isn't down, set direction up
   //87 is uppercase W, 119 is lowercase
+
+  // up = 0, down = -1, left = 1, right = 2
   var key = event.keyCode;
   if (direction != -1 && (key == 87 || key == 119)) {
     direction = 0;
@@ -117,6 +140,8 @@ window.addEventListener("keypress", function key(event) {
     running = true;
     // hide pause sign
     document.getElementById("overlayPause").style.display = "none";
+  } else if (key == 32 && gameOver == true) {
+    replay();
   } else if (key == 32) {
     // spacebar is pause
     // display pause sign
@@ -168,6 +193,8 @@ function stillAlive() {
     }
     score = 0;
     document.getElementById("score").innerHTML = score;
+
+    //displays the replay button
     document.getElementById("overlay").style.display = "inline";
     gameOver = true;
     console.log("BITCH YOU LOST");
@@ -185,6 +212,7 @@ function updateFruit() {
     score++;
     document.getElementById("score").innerHTML = score;
     createFruit();
+    createObstacle();
   }
 }
 
@@ -199,7 +227,6 @@ function updateTail() {
 }
 
 function replay() {
-  console.log("test");
   document.getElementById("overlay").style.display = "none";
   running = false;
   snakeX = 2;
@@ -208,6 +235,7 @@ function replay() {
   tailX = [snakeX];
   tailY = [snakeY];
   direction = -1; // up = 0, down = -1, left = 1, right = 2
+  clearObstacle();
   run();
   gameOver = false;
 }
