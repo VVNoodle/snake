@@ -16,25 +16,63 @@
     <button type="button" class="btn btn-danger" id="overlay" onclick="replay()">
         <h1>Replay?</h1>
     </button>
-    <h2 id="overlayPause"> || </h2>
-    <h2>move= WASD</h2>
-    <h2>pause= Space</h2>
-
-    <label for="user">
-        <h2>speed=
-            <input type="range" id="test" min="30" max="130">
-        </h2>
-    </label>
-
-    <h3>score =
-        <span id="score">0</span>
-    </h3>
-    <h3>highscore =
-        <span id="hs">0</span>
-    </h3>
-
-    <!-- Make sure to place script on bottom of bod -->
-    <script src="snake.js"></script>
+    <h1 id="overlayPause"> || </h1>
+    <div class="container">
+        <div class="row makeSpace">
+            <div id="settings" class="col-md-3">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h2>MOVE</h2>
+                            </td>
+                            <td>
+                                <h2>WASD</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>PAUSE</h2>
+                            </td>
+                            <td>
+                                <h2>space</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>SPEED</h2>
+                            </td>
+                            <td>
+                                <input type="range" id="test" min="30" max="130">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>SCORE</h2>
+                            </td>
+                            <td>
+                                <h2>
+                                    <span id="score">0</span>
+                                </h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>HIGHSCORE</h2>
+                            </td>
+                            <td>
+                                <h2>
+                                    <span id="hs">0</span>
+                                </h2>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Make sure to place script on bottom of bod -->
+            <script src="snake.js"></script>
+        </div>
+    </div>
 </body>
 
 </html>

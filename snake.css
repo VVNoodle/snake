@@ -43,11 +43,12 @@ td {
 
 h1 {
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 h2 {
-  color: white;
+  color: white !important;
+  font-size: 20px !important;
 }
 
 #overlay {
@@ -67,4 +68,12 @@ h2 {
   color: rgb(222, 237, 89);
   position: absolute;
   z-index: 1;
+}
+
+#settings {
+  padding-top: 100px;
+}
+
+.makeSpace {
+  padding-top: 40px;
 }

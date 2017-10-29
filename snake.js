@@ -1,7 +1,5 @@
 /*
 TODO:
-  Replay option after game finishes
-    when win
   Animation
     when get fruit
     when hit wall
@@ -11,7 +9,6 @@ TODO:
     when fruit
     when hit wall
     when hit snake
-  BG music
 */
 
 // settings
@@ -53,7 +50,7 @@ function init() {
   * Generate the map for the snake
   */
 function createMap() {
-  document.write("<table>");
+  document.write('<div class="col-md-7 offset-md-2"><table>');
   for (var y = 0; y < height; y++) {
     document.write("<tr>");
     for (var x = 0; x < width; x++) {
@@ -65,7 +62,7 @@ function createMap() {
     }
     document.write("</tr>");
   }
-  document.write("</table>");
+  document.write("</div></table>");
 }
 
 function createSnake() {
