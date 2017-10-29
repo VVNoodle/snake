@@ -7,11 +7,6 @@ TODO:
     when hit wall
     when hit snake
     when pause
-  Menu option
-    Settings
-    volume
-    home
-    change speed
   Sound effects
     when fruit
     when hit wall
@@ -37,6 +32,7 @@ var running = false;
 var gameOver;
 var direction = -1; // up = 0, down = -1, left = 1, right = 2
 var int;
+var score = 0;
 /**
  * entry point of game
  */
@@ -164,15 +160,24 @@ function update() {
 
 function stillAlive() {
   if (getType(snakeX, snakeY) == "wall" || getType(snakeX, snakeY) == "snake") {
+    //set the rightmost bottom block the color of red, meaning lose 
     set(width - 1, height - 1, "lose");
     for (var i = length; i > -1; i--) {
       set(tailX[i], tailY[i], "blank");
     }
+    //if highscore is lower than score when player die, then change the highscore to that current score
+    if (document.getElementById("hs").innerHTML < score) {
+      document.getElementById("hs").innerHTML = score;
+    }
+    score = 0;
+    document.getElementById("score").innerHTML = score;
     document.getElementById("overlay").style.display = "inline";
     gameOver = true;
     console.log("BITCH YOU LOST");
     return false;
   }
+
+  //set the rightmost bottom block the color of yellow, meaning still alive
   set(width - 1, height - 1, "playing");
   return true;
 }
@@ -180,6 +185,8 @@ function stillAlive() {
 function updateFruit() {
   if (fX == snakeX && fY == snakeY) {
     length++; //grow the snake by 1
+    score++;
+    document.getElementById("score").innerHTML = score;
     createFruit();
   }
 }
